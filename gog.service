@@ -1,0 +1,12 @@
+# go-guerrilla SMTP listener
+# On openSuse systems, put this in /etc/systemd/system
+[Unit]
+Description=Go-Guerrilla SMTP Listener for Daily Status Email
+Conflicts=sendmail.service exim.service postfix.service
+
+[Service]
+ExecStart=/opt/bin/go-guerrilla -config=/etc/goguerrilla.conf
+
+[Install]
+WantedBy=multi-user.target
+
